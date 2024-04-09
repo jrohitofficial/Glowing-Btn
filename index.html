@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a href="#" style="--clr: #0f0"><span>button</span></a>
+    <a href="#" style="--clr: #0ff"><span>button</span></a>
+    <a href="#" style="--clr: #ff0"><span>button</span></a>
+    <script>
+      let btns = document.querySelectorAll("a");
+
+      btns.forEach((btn) => {
+        btn.onmousemove = function (e) {
+          let x = e.pageX - btn.offsetLeft;
+          let y = e.pageY - btn.offsetTop;
+
+          btn.style.setProperty("--x", x + "px");
+          btn.style.setProperty("--y", y + "px");
+        };
+      });
+    </script>
+  </body>
+</html>
